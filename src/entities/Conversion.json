@@ -1,0 +1,43 @@
+{
+  "name": "Conversion",
+  "type": "object",
+  "properties": {
+    "visitor_id": {
+      "type": "string",
+      "description": "ID of the visitor"
+    },
+    "ab_test_id": {
+      "type": "string",
+      "description": "ID of the A/B test"
+    },
+    "variant_id": {
+      "type": "string",
+      "description": "ID of the variant"
+    },
+    "conversion_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When conversion occurred"
+    },
+    "goal_type": {
+      "type": "string",
+      "description": "Type of goal achieved"
+    },
+    "conversion_value": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Optional revenue value"
+    },
+    "referrer_source": {
+      "type": "string",
+      "description": "Traffic source"
+    }
+  },
+  "required": [
+    "visitor_id",
+    "ab_test_id",
+    "variant_id",
+    "conversion_date",
+    "goal_type"
+  ]
+}

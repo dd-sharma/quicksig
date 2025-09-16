@@ -1,0 +1,31 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "The ID of the user who performed the action"
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "The ID of the organization where the action occurred"
+    },
+    "action_description": {
+      "type": "string",
+      "description": "A human-readable description of the action"
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "The type of entity related to the action (e.g., 'ABTest', 'User')"
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "The ID of the entity related to the action"
+    }
+  },
+  "required": [
+    "user_id",
+    "organization_id",
+    "action_description"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Variant",
+  "type": "object",
+  "properties": {
+    "variant_name": {
+      "type": "string",
+      "description": "Name of the variant (e.g., 'Control', 'Variant A')"
+    },
+    "ab_test_id": {
+      "type": "string",
+      "description": "ID of the A/B test this variant belongs to"
+    },
+    "variant_type": {
+      "type": "string",
+      "enum": [
+        "control",
+        "treatment"
+      ],
+      "description": "Type of variant"
+    },
+    "content": {
+      "type": "string",
+      "description": "The content, URL, or code for this variant"
+    },
+    "traffic_percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percentage of traffic allocated to this variant"
+    },
+    "visitor_count": {
+      "type": "integer",
+      "default": 0,
+      "description": "Number of visitors who saw this variant"
+    },
+    "conversion_count": {
+      "type": "integer",
+      "default": 0,
+      "description": "Number of conversions for this variant"
+    },
+    "conversion_rate": {
+      "type": "number",
+      "default": 0,
+      "description": "Calculated conversion rate (conversion_count / visitor_count * 100)"
+    }
+  },
+  "required": [
+    "variant_name",
+    "ab_test_id",
+    "variant_type",
+    "traffic_percentage"
+  ]
+}
