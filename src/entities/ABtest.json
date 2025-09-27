@@ -1,0 +1,107 @@
+{
+  "name": "ABTest",
+  "type": "object",
+  "properties": {
+    "test_name": {
+      "type": "string",
+      "description": "Name of the A/B test"
+    },
+    "description": {
+      "type": "string",
+      "description": "Hypothesis or description of what's being tested"
+    },
+    "test_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URL being tested"
+    },
+    "project_id": {
+      "type": "string",
+      "description": "ID of the project this test belongs to"
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "ID of the organization"
+    },
+    "test_status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "running",
+        "paused",
+        "completed",
+        "archived"
+      ],
+      "default": "draft",
+      "description": "Current test status"
+    },
+    "test_type": {
+      "type": "string",
+      "enum": [
+        "url_split",
+        "code_variant"
+      ],
+      "description": "Type of test - URL split or code variations"
+    },
+    "success_metric": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "click",
+            "conversion",
+            "page_visit",
+            "custom_event"
+          ]
+        },
+        "selector": {
+          "type": "string",
+          "description": "CSS selector for clicks"
+        },
+        "target_url": {
+          "type": "string",
+          "description": "Target URL for conversions/page visits"
+        },
+        "event_name": {
+          "type": "string",
+          "description": "Custom event name to track"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of success metric"
+        }
+      }
+    },
+    "started_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When test was started"
+    },
+    "ended_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When test was ended"
+    },
+    "estimated_days": {
+      "type": "integer",
+      "description": "Estimated days to get results"
+    },
+    "total_visitors": {
+      "type": "integer",
+      "default": 0,
+      "description": "Total number of visitors to the test"
+    },
+    "early_stopping_enabled": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, apply alpha spending for sequential testing looks"
+    }
+  },
+  "required": [
+    "test_name",
+    "test_url",
+    "organization_id",
+    "test_type"
+  ]
+}

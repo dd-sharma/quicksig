@@ -1,0 +1,33 @@
+{
+  "name": "AIInterpretation",
+  "type": "object",
+  "properties": {
+    "ab_test_id": {
+      "type": "string",
+      "description": "Reference to ABTest.id"
+    },
+    "interpretation_json": {
+      "type": "object",
+      "description": "Full interpretation snapshot",
+      "additionalProperties": true
+    },
+    "confidence_at_time": {
+      "type": "number",
+      "description": "Confidence at time (0-1)"
+    },
+    "visitors_at_time": {
+      "type": "integer",
+      "description": "Total visitors at snapshot time"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Snapshot timestamp"
+    }
+  },
+  "required": [
+    "ab_test_id",
+    "interpretation_json",
+    "created_at"
+  ]
+}

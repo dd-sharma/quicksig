@@ -1,0 +1,34 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "description": "Name of the project"
+    },
+    "website_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Website or app URL"
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "ID of the organization"
+    },
+    "tracking_id": {
+      "type": "string",
+      "description": "Unique tracking identifier"
+    },
+    "active_status": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether project is active"
+    }
+  },
+  "required": [
+    "project_name",
+    "website_url",
+    "organization_id",
+    "tracking_id"
+  ]
+}
