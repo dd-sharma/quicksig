@@ -1,0 +1,33 @@
+{
+  "name": "UsageTracking",
+  "type": "object",
+  "properties": {
+    "organization_id": {
+      "type": "string",
+      "description": "Organization foreign key"
+    },
+    "month_year": {
+      "type": "string",
+      "description": "YYYY-MM string"
+    },
+    "visitors_used": {
+      "type": "integer",
+      "default": 0,
+      "description": "Visitors counted this month"
+    },
+    "tests_created": {
+      "type": "integer",
+      "default": 0,
+      "description": "Tests created this month"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last usage update timestamp"
+    }
+  },
+  "required": [
+    "organization_id",
+    "month_year"
+  ]
+}

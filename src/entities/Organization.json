@@ -1,0 +1,78 @@
+{
+  "name": "Organization",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the organization"
+    },
+    "website_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Main website URL for the organization"
+    },
+    "owner_id": {
+      "type": "string",
+      "description": "ID of the organization owner (user ID)"
+    },
+    "subscription_tier": {
+      "type": "string",
+      "enum": [
+        "free",
+        "professional",
+        "business"
+      ],
+      "default": "free",
+      "description": "Subscription level"
+    },
+    "monthly_test_limit": {
+      "type": "integer",
+      "default": 3,
+      "description": "Maximum tests per month for the free tier"
+    },
+    "member_limit": {
+      "type": "integer",
+      "default": 3,
+      "description": "Maximum team members for the free tier"
+    },
+    "monthly_visitor_quota": {
+      "type": "integer",
+      "default": 10000,
+      "description": "Monthly visitor quota for the plan"
+    },
+    "concurrent_test_limit": {
+      "type": "integer",
+      "default": 3,
+      "description": "Max concurrent running tests"
+    },
+    "plan_type": {
+      "type": "string",
+      "enum": [
+        "free",
+        "professional",
+        "business"
+      ],
+      "default": "free",
+      "description": "Current plan type (alias of subscription_tier)"
+    },
+    "quota_reset_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When monthly quota resets (YYYY-MM-DD)"
+    },
+    "quota_exceeded_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when quota was first exceeded"
+    },
+    "grace_period_notified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether a warning email was sent during grace period"
+    }
+  },
+  "required": [
+    "name",
+    "owner_id"
+  ]
+}

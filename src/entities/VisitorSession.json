@@ -1,0 +1,75 @@
+{
+  "name": "VisitorSession",
+  "type": "object",
+  "properties": {
+    "test_id": {
+      "type": "string",
+      "description": "Foreign key to ABTest"
+    },
+    "variant_id": {
+      "type": "string",
+      "description": "Foreign key to Variant"
+    },
+    "visitor_id": {
+      "type": "string",
+      "description": "Unique visitor identifier (hashed)"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Unique session identifier"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "Anonymized/hashed IP address"
+    },
+    "user_agent": {
+      "type": "string",
+      "description": "Raw user agent string"
+    },
+    "device_type": {
+      "type": "string",
+      "enum": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "description": "Device type"
+    },
+    "browser_name": {
+      "type": "string",
+      "description": "Parsed browser name"
+    },
+    "os_name": {
+      "type": "string",
+      "description": "Parsed OS name"
+    },
+    "referrer_source": {
+      "type": "string",
+      "description": "Source/medium (Google, Direct, etc.)"
+    },
+    "landing_page": {
+      "type": "string",
+      "description": "Landing page URL"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Session timestamp"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country (optional)"
+    },
+    "region": {
+      "type": "string",
+      "description": "Region/State (optional)"
+    }
+  },
+  "required": [
+    "test_id",
+    "variant_id",
+    "visitor_id",
+    "session_id",
+    "created_at"
+  ]
+}

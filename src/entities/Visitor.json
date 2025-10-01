@@ -1,0 +1,55 @@
+{
+  "name": "Visitor",
+  "type": "object",
+  "properties": {
+    "visitor_id": {
+      "type": "string",
+      "description": "Unique visitor identifier"
+    },
+    "ab_test_id": {
+      "type": "string",
+      "description": "ID of the A/B test"
+    },
+    "assigned_variant_id": {
+      "type": "string",
+      "description": "ID of assigned variant"
+    },
+    "first_seen_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "First time visitor was seen"
+    },
+    "last_seen_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last time visitor was seen"
+    },
+    "device_type": {
+      "type": "string",
+      "enum": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "description": "Device type of visitor"
+    },
+    "browser": {
+      "type": "string",
+      "description": "Browser used by visitor"
+    },
+    "referrer_source": {
+      "type": "string",
+      "description": "Traffic source like Google, Direct, Facebook"
+    },
+    "user_agent": {
+      "type": "string",
+      "description": "User agent string"
+    }
+  },
+  "required": [
+    "visitor_id",
+    "ab_test_id",
+    "assigned_variant_id",
+    "first_seen_date"
+  ]
+}

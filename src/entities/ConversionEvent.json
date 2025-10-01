@@ -1,0 +1,57 @@
+{
+  "name": "ConversionEvent",
+  "type": "object",
+  "properties": {
+    "test_id": {
+      "type": "string",
+      "description": "Foreign key to ABTest"
+    },
+    "variant_id": {
+      "type": "string",
+      "description": "Foreign key to Variant"
+    },
+    "visitor_id": {
+      "type": "string",
+      "description": "Visitor ID from session"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Session ID from session"
+    },
+    "conversion_type": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "secondary"
+      ],
+      "description": "Primary or secondary goal"
+    },
+    "conversion_value": {
+      "type": "number",
+      "description": "Revenue or value",
+      "default": 0
+    },
+    "goal_name": {
+      "type": "string",
+      "description": "Which goal was completed"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Conversion timestamp"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Extra data as JSON",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "test_id",
+    "variant_id",
+    "visitor_id",
+    "session_id",
+    "goal_name",
+    "created_at"
+  ]
+}
